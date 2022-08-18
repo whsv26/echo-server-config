@@ -29,7 +29,7 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 8080
-          image: "whsv26/echo-server:1.0.0"
+          image: "whsv26/echo-server:1.1.0"
           imagePullPolicy: Always
 ---
 apiVersion: v1
