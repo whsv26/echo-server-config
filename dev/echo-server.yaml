@@ -1,3 +1,9 @@
+# kubectl apply -f ./echo-server.yaml
+# kubectl port-forward -n playground service/echo-server-service 8080:8080
+# kubectl port-forward -n argocd service/argocd-server 8081:443
+# login: admin
+# password: argocd-initial-admin-secret config
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -32,11 +38,10 @@ metadata:
   namespace: playground
   name: echo-server-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: echo-server
   ports:
     - port: 8080
-      nodePort: 30000
       targetPort: 8080
       protocol: TCP
