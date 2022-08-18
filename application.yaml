@@ -1,4 +1,4 @@
-apiVersion: argoproject.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: echo-server-argo-application
@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:whsv26/echo-server-config.git
+    repoURL: https://github.com/whsv26/echo-server-config.git
     targetRevision: HEAD
     path: dev # track only dev folder in repo
   destination:
